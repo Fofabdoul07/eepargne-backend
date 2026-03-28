@@ -15,12 +15,12 @@ def create_app():
     jwt.init_app(app)
     CORS(app, origins=["*"])
 
-    from routes.auth import auth_bp
-    from routes.groups import groups_bp
-    from routes.payments import payments_bp
-    from routes.loans import loans_bp
-    from routes.parrainage import parrainage_bp
-    from routes.admin import admin_bp
+    from auth import auth_bp
+    from groups import groups_bp
+    from payments import payments_bp
+    from loans import loans_bp
+    from parrainage import parrainage_bp
+    from admin import admin_bp
 
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(groups_bp, url_prefix="/api/groups")

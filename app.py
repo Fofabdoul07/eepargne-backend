@@ -21,6 +21,7 @@ def create_app():
     from loans import loans_bp
     from parrainage import parrainage_bp
     from admin import admin_bp
+    from setup import setup_bp
 
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(groups_bp, url_prefix="/api/groups")
@@ -28,6 +29,7 @@ def create_app():
     app.register_blueprint(loans_bp, url_prefix="/api/loans")
     app.register_blueprint(parrainage_bp, url_prefix="/api/parrainage")
     app.register_blueprint(admin_bp, url_prefix="/api/admin")
+    app.register_blueprint(setup_bp, url_prefix="/api/setup")
 
     with app.app_context():
         db.create_all()
